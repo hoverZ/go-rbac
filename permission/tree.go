@@ -82,7 +82,7 @@ func FindLeafNode(rootNode *TreeNode, keys []string, mode int) (targetItem *Tree
 				traversingItems = targetItem.Children
 				hadMatch = true
 				break
-			} else if mode == find_leaf_mode_init && node.Key != "" && node.Key[0:1] == ":" {
+			} else if node.Key != "" && node.Key[0:1] == ":" {
 				// 初始化时的模糊匹配，将带有 : 前缀的 key 判定为同一个 key
 				// 由于完全匹配的优先于模糊匹配，所以需要确保没有完全匹配后才能退出
 				like = true
